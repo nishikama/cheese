@@ -1,0 +1,84 @@
+#panel-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+		cursor: pointer;
+}
+
+#panel-btn-icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    width: 52px;
+    height: 2px;
+    margin: -1px 0 0 -7px;
+    background: #222222;
+    transition: .2s;
+}
+
+#panel-btn-icon:before,
+#panel-btn-icon:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 52px;
+    height: 2px;
+    background: #222222;
+    transition: .3s;
+}
+
+#panel-btn-icon:before {
+    margin-top: -14px;
+}
+
+#panel-btn-icon:after {
+    margin-top: 12px;
+}
+
+#panel-btn-icon.close {
+    background: transparent;
+}
+
+#panel-btn-icon.close:before,
+#panel-btn-icon.close:after {
+    margin-top: 0;
+}
+
+#panel-btn-icon.close:before {
+    transform: rotate(-45deg);
+}
+
+#panel-btn-icon.close:after {
+    transform: rotate(-135deg);
+}
+
+@media screen and (max-width: 767px) {
+    #panel-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    #panel-btn-icon:before,
+    #panel-btn-icon:after {
+        width: 40px;
+    }
+
+    #panel-btn-icon {
+        width: 40px;
+        margin-left: -6px;
+    }
+
+    #panel-btn-icon:before {
+        margin-top: -14px;
+    }
+
+    #panel-btn-icon:after {
+        margin-top: 12px;
+    }
+
+}

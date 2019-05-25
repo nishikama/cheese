@@ -1,0 +1,895 @@
+@charset "utf-8";
+
+/* 文字に関する基本設定 */
+body {
+    color: #222222;
+    font-family: "メイリオ", "Meiryo", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+a {
+    color: #222222;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+p,
+dt,
+dd {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+/* 標準の画像サイズを原寸大に */
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* border, paddingもwidthに含める */
+* {
+    box-sizing: border-box;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 121px;
+    z-index: 100;
+}
+
+.header .inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1366px;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.header .left {
+    margin-left: 50px;
+    width: 381px;
+    height: 80px;
+}
+
+.header .left a {
+    display: block;
+    margin: 0 auto;
+    width: 381px;
+    height: 80px;
+    background-image: url('../images/header_logo.png');
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.header .right ul {
+    display: flex;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    width: 700px;
+    justify-content: flex-end;
+    font-size: 21px;
+}
+
+.header .right li {
+    margin-right: 50px;
+}
+
+.header .right a:hover {
+    opacity: 0.5;
+}
+
+.header #panel-btn {
+    display: none;
+}
+
+.article {
+    margin: 121px auto 0 auto;
+    width: 100%;
+    max-width: 1366px;
+}
+
+.main-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
+    background: url('../images/mainbg.png') center no-repeat;
+    color: #ffffff;
+    text-align: center;
+}
+
+.main-image h2 {
+    padding-top: 30px;
+}
+
+.lede h3 {
+    padding-top: 60px;
+    font-weight: bold;
+}
+
+.about h3,
+.news h3 {
+    color: #ffd61a;
+}
+
+.lede h4 {
+    margin-bottom: 60px;
+    padding-top: 30px;
+}
+
+.lede p {
+    margin-top: 40px;
+}
+
+.lede p.last {
+    margin-bottom: 80px;
+}
+
+.slide {
+    display: flex;
+}
+
+#about {
+    position: relative;
+    z-index: 5;
+    margin-top: -121px;
+}
+
+/* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+#about:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 121px;
+}
+
+#course {
+    position: relative;
+    z-index: 4;
+    margin-top: -121px;
+}
+
+/* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+#course:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 121px;
+}
+
+.course h5 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.course p {
+    margin-bottom: 60px;
+}
+
+.course__box {
+    display: flex;
+    background-color: #fafafa;
+}
+
+.course__box .inner {
+    width: 480px;
+    background-color: #fafafa;
+}
+
+.course__box .half {
+    width: 50%;
+    height: auto;
+}
+
+.course__box.odd .right {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    text-align: left;
+}
+
+.course__box.odd .right .inner {
+    margin-right: auto;
+    padding-left: 50px;
+}
+
+.course__box.even .left {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    text-align: left;
+}
+
+.course__box.even .left .inner {
+    margin-left: auto;
+    padding-right: 50px;
+}
+
+.course__box h5 {
+    margin-bottom: 40px;
+}
+
+.course__box p {
+    margin: 0;
+}
+
+#news {
+    position: relative;
+    z-index: 3;
+    margin-top: -121px;
+}
+
+/* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+#news:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 121px;
+}
+
+.news .outer {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 960px;
+    justify-content: space-between;
+}
+
+.news .inner {
+    display: block;
+    margin: 0 auto;
+    width: 31.25%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.news .inner:hover {
+    opacity: 0.8;
+}
+
+.news .above {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+.news p {
+    margin: 0;
+    padding-top: 30px;
+    margin-bottom: 24px;
+}
+
+.news p.last {
+    margin: 0;
+    padding-top: 0;
+}
+
+.more,
+.submit {
+    padding: 60px 0 60px;
+    width: 100%;
+}
+
+.more a {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 300px;
+    height: 60px;
+}
+
+.more p,
+.submit button {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 0;
+    width: 300px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-width: 0;
+    background-color: #ffd61a;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.more a:hover,
+.submit button:hover {
+    opacity: 0.8;
+}
+
+#access {
+    position: relative;
+    z-index: 2;
+    margin-top: -121px;
+}
+
+/* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+#access:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 121px;
+}
+
+.access {
+    background-color: transparent;
+}
+
+.map {
+    margin: 0 auto;
+    padding-bottom: 60px;
+    width: 100%;
+    height: 300px;
+}
+
+.access h3,
+.access h4,
+.access iframe,
+.access .overview {
+    display: block;
+    background-color: #fafafa;
+}
+
+.access h4 {
+    margin-bottom: 0;
+    padding-bottom: 60px;
+}
+
+.access .overview {
+    padding-bottom: 60px;
+}
+
+.access dl {
+    display: flex;
+    margin: 0 auto;
+    width: 96%;
+    max-width: 505px;
+    text-align: left;
+}
+
+.access dt,
+.access dd {
+    padding-bottom: 30px;
+}
+
+.access .last dt,
+.access .last dd {
+    padding-bottom: 0;
+}
+
+.access dt {
+    margin: 0 auto;
+    width: 28.71287128712871%;
+    min-width: 145px;
+}
+
+.access dd {
+    margin: 0 auto;
+    width: 71.28712871287129%;
+}
+
+#contact {
+    position: relative;
+    z-index: 1;
+    margin-top: -121px;
+}
+
+/* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+#contact:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 121px;
+}
+
+.contact p.last {
+    margin-bottom: 70px;
+}
+
+.contact dl {
+    display: flex;
+    margin: 0 auto;
+    width: 96%;
+    max-width: 640px;
+    text-align: left;
+}
+
+.contact dt,
+.contact dd {
+    border-top: solid 2px #bfbfbf;
+}
+
+.contact .last dt,
+.contact .last dd {
+    border-bottom: solid 2px #bfbfbf;
+}
+
+.contact dt {
+    margin: 0 auto;
+    border-right: solid 1px #bfbfbf;
+    padding: 16px 64px 16px 16px;
+    width: 37.5%;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.contact dd {
+    margin: 0 auto;
+    padding: 8px;
+    width: 62.5%;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.contact input[type="text"],
+.contact input[type="email"] {
+    margin: 0 auto;
+    border: solid 1px #bfbfbf;
+    width: 85.41666666666667%;
+    height: 36px;
+}
+
+.contact select {
+    margin: 0 auto;
+    border: solid 1px #bfbfbf;
+    width: 85.41666666666667%;
+    height: 38px;
+}
+
+.contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.contact li.last {
+    margin-bottom: 0;
+}
+
+.contact input[type="checkbox"],
+.contact label {
+    display: inline-block;
+    margin: 0;
+}
+
+.contact .checkbox {
+    margin-left: 32px;
+}
+
+.contact textarea {
+    margin: 0 auto;
+    border: solid 1px #bfbfbf;
+    width: 85.41666666666667%;
+    height: 96px;
+}
+
+.submit {
+    padding-bottom: 140px;
+}
+
+.footer {
+    padding: 30px 0 30px;
+    background-color: #707070;
+    color: #ffffff;
+    text-align: center;
+}
+
+@media screen and (max-width: 1365px) {
+    h1 {
+        font-size: 3.51390922401171vw;
+    }
+
+    h2 {
+        font-size: 2.34260614934114vw;
+    }
+
+    .header {
+        height: 80px;
+    }
+
+    .header.close {
+        height: 100%;
+    }
+
+    .header .inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header .left {
+        margin: 10px auto 10px 20px;
+        width: 285px;
+        height: 60px;
+    }
+
+    .header .left a {
+        display: block;
+        margin: 0 auto;
+        width: 285px;
+        height: 60px;
+        background-image: url('../images/header_logo.png');
+        background-size: contain;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .header .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header .right ul {
+        display: none;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+
+    .header .right li {
+        width: 100%;
+        margin: 0 0 48px 0;
+        text-align: center;
+    }
+
+    .header .right li.last {
+        margin-bottom: 0;
+    }
+
+    .header.close .right {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header.close .right ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header #panel-btn {
+        position: absolute;
+        top: 6px;
+        right: 20px;
+        display: block;
+    }
+
+    .article {
+        margin-top: 80px;
+    }
+
+    #about {
+        margin-top: -80px;
+    }
+
+    /* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+    #about:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 80px;
+    }
+
+    #course {
+        margin-top: -80px;
+    }
+
+    /* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+    #course:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 80px;
+    }
+
+    .course__box h5 {
+        font-size: 1.75695461200586vw;
+    }
+
+    .course__box p {
+        font-size: 1.17130307467057vw;
+        line-height: 2.0497803806735vw;
+    }
+
+    .course th,
+    .course td {
+        font-size: 1.34003350083752vw;
+        line-height: 2.34505862646566vw;
+    }
+
+    #news {
+        margin-top: -80px;
+    }
+
+    /* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+    #news:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 80px;
+    }
+
+    #access {
+        margin-top: -80px;
+    }
+
+    /* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+    #access:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 80px;
+    }
+
+    #contact {
+        margin-top: -80px;
+    }
+
+    /* そのままだとページ内リンクがヘッダの分上に持ち上がっているので、下へ下げる */
+    #contact:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .course__box h5 {
+        font-size: 2.108345534407032vw;
+    }
+
+    .course__box p {
+        font-size: 1.405563689604684vw;
+        line-height: 2.4597364568082vw;
+    }
+
+    .course__box .inner {
+        width: 93.75%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 5.27086383601756vw;
+    }
+
+    h2 {
+        font-size: 3.51390922401171vw;
+    }
+
+    .br {
+        display: none;
+    }
+
+    .header {
+        height: 60px;
+    }
+
+    .header .left {
+        margin-left: 10px;
+        width: 190px;
+        height: 40px;
+    }
+
+    .header .left a {
+        width: 190px;
+        height: 40px;
+    }
+
+    .header #panel-btn {
+        right: 10px;
+    }
+
+    .article {
+        margin-top: 60px;
+    }
+
+    #about {
+        margin-top: -60px;
+    }
+
+    #about:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    #course {
+        margin-top: -60px;
+    }
+
+    #course:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    .course__box {
+        display: block;
+    }
+
+    .course__box .half {
+        width: 100%;
+    }
+
+    .course__box.odd .right {
+        display: block;
+        width: 100%;
+    }
+
+    .course__box.odd .right .inner {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px 2%;
+        width: 100%;
+    }
+
+    .course__box.even {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .course__box.even .left {
+        display: block;
+        width: 100%;
+    }
+
+    .course__box.even .left .inner {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 50px 2%;
+        width: 100%;
+    }
+
+    .course h5 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .course p,
+    .course th,
+    .course td {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    #news {
+        margin-top: -60px;
+    }
+
+    #news:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    .news .outer {
+        display: block;
+    }
+
+    .news .inner {
+        margin-bottom: 60px;
+        width: 100%;
+    }
+
+    .news .below {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2%;
+        width: 100%;
+    }
+
+    .news .last {
+        margin-bottom: 0;
+    }
+
+    #access {
+        margin-top: -60px;
+    }
+
+    #access:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    #contact {
+        margin-top: -60px;
+    }
+
+    #contact:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    .contact dl {
+        display: block;
+    }
+
+    .contact dt {
+        border-top: solid 2px #bfbfbf;
+        border-right-width: 0;
+        padding: 16px;
+        width: 100%;
+    }
+
+    .contact dd {
+        border-top: solid 1px #bfbfbf;
+        padding: 8px 32px;
+        width: 100%;
+    }
+
+    .contact .last dt {
+        border-bottom-width: 0;
+    }
+
+    .contact input[type="text"],
+    .contact input[type="email"] {
+        width: 100%;
+    }
+
+    .contact select {
+        width: 100%;
+    }
+
+    .contact textarea {
+        width: 100%;
+    }
+
+    .footer {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
