@@ -32,4 +32,4 @@ $(() => {
         $('#panel-btn-icon, .header').removeClass('close')
         return true
     })
- })
+})
