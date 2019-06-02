@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 $(() => {
     // slickプラグインの設定
@@ -32,21 +32,4 @@ $(() => {
         $('#panel-btn-icon, .header').removeClass('close')
         return true
     })
-
-    $.ajaxSetup({ cache: true })
-    $.getScript('https://connect.facebook.net/en_US/sdk.js', () => {
-        FB.init({
-            appId: '2002181400091533',
-            version: 'v3.2' // or v2.1, v2.2, v2.3, ...
-        })
-
-        FB.login((response) => {
-            if (response.status === 'connected') {
-                $('body').css('visibility', 'visible')        
-            }
-            else {
-                window.location.href = 'https://www.facebook.com'
-            }
-        })
-    })
-})
+ })
